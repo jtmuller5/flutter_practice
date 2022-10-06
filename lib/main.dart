@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/flossy_screen/flossy_screen_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const FlossyScreenView(),
     );
   }
 }
@@ -25,24 +26,55 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
-        children: [
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: ColoredBox(color: Colors.red),
+      backgroundColor: Colors.black,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => print('hello'),
+      ),
+      appBar: AppBar(title: Text('Joe\'s App')),
+      body: Align(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Flexible(
+                child: const SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: ColoredBox(color: Color.fromARGB(255, 246, 246, 246)),
+                ),
+              ),
+              Flexible(
+                flex: 10,
+                child: SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: ColoredBox(color: Color.fromARGB(255, 236, 167, 212)),
+                ),
+              ),
+              Flexible(
+                child: SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: ColoredBox(color: Color.fromARGB(255, 192, 255, 194)),
+                ),
+              ),
+            ],
           ),
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: ColoredBox(color: Colors.yellow),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'hola',
           ),
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: ColoredBox(color: Colors.green),
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.alarm_rounded), label: 'hola1'),
         ],
+        onTap: (value) {
+          print(value.toString());
+        },
       ),
     );
   }
