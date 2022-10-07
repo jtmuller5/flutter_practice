@@ -24,7 +24,7 @@ jobs:
         id: version-code
         with:
           text: ${{ env.VERSION_TAG }}
-          regex: '\d' # https://regexr.com/
+          regex: '^(.*)' # https://regexr.com/
       - name: 'Extract build number from tag'
         uses: actions-ecosystem/action-regex-match@v2
         id: build-number
