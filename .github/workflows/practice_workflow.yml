@@ -12,14 +12,15 @@ jobs:
         uses: actions/checkout@v3
       - name: 'Print tag value'
         run: |
-          echo ${{ GITHUB_REF#refs/*/}}
+          echo ${GITHUB_REF#refs/*/}
         # Can access the tag value using ${GITHUB_REF#refs/*/}
+        # https://docs.github.com/en/actions/learn-github-actions/environment-variables
         # https://stackoverflow.com/questions/58177786/get-the-current-pushed-tag-in-github-actions
       - name: 'Extract version code from tag' # https://github.com/actions-ecosystem/action-regex-match
         uses: actions-ecosystem/action-regex-match@v2
         id: version-code
         with:
-          text: ${{ GITHUB_REF#refs/*/}}
+          text: "${GITHUB_REF#refs/*/}"
           regex: '(\d.\d.\d)' # https://regexr.com/
       - name: 'Extract build number from tag'
         uses: actions-ecosystem/action-regex-match@v2
