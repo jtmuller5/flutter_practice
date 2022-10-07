@@ -21,13 +21,13 @@ jobs:
         id: version-code
         with:
           text: "${GITHUB_REF#refs/*/}"
-          regex: '(\d.\d.\d)' # https://regexr.com/
+          regex: '\d.\d.\d' # https://regexr.com/
       - name: 'Extract build number from tag'
         uses: actions-ecosystem/action-regex-match@v2
         id: build-number
         with:
           text: ${GITHUB_REF#refs/*/}
-          regex: '(\d{3})' # https://regexr.com/
+          regex: '\d{3}' # https://regexr.com/
       - name: 'Print extracted values'
         run: |
           echo ${{ steps.version-code.outputs.group1 }}
