@@ -13,22 +13,23 @@ jobs:
       - name: 'Print tag value'
         run: |
           echo ${GITHUB_REF#refs/*/}
+          echo "VERSION_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
         # Can access the tag value using ${GITHUB_REF#refs/*/}
         # https://docs.github.com/en/actions/learn-github-actions/environment-variables
         # https://stackoverflow.com/questions/58177786/get-the-current-pushed-tag-in-github-actions
       - run: echo ${GITHUB_REF#refs/*/}
-      - run: echo $GITHUB_REF#refs/*/
+      - run: echo $VERSION_TAG
       - name: 'Extract version code from tag' # https://github.com/actions-ecosystem/action-regex-match
         uses: actions-ecosystem/action-regex-match@v2
         id: version-code
         with:
-          text: $GITHUB_REF#refs/*/
+          text: $VERSION_TAG
           regex: '\d.\d.\d' # https://regexr.com/
       - name: 'Extract build number from tag'
         uses: actions-ecosystem/action-regex-match@v2
         id: build-number
         with:
-          text: $GITHUB_REF#refs/*/
+          text: $VERSION_TAG
           regex: '\d{3}' # https://regexr.com/
       - name: 'Print extracted values'
         run: |
