@@ -23,13 +23,13 @@ jobs:
         uses: actions-ecosystem/action-regex-match@v2
         id: version-code
         with:
-          text: $VERSION_TAG
+          text: ${{ env.VERSION_TAG }}
           regex: '\d.\d.\d' # https://regexr.com/
       - name: 'Extract build number from tag'
         uses: actions-ecosystem/action-regex-match@v2
         id: build-number
         with:
-          text: $VERSION_TAG
+          text: ${{ env.VERSION_TAG }}
           regex: '\d{3}' # https://regexr.com/
       - name: 'Print extracted values'
         run: |
