@@ -36,3 +36,5 @@ jobs:
         run: |
           echo ${{ steps.version-code.outputs.group1 }}
           echo ${{ steps.build-number.outputs.group1 }}
+          echo ${{ steps.version-code.outputs.match }}
+          echo ${{ steps.build-number.outputs.match }}
