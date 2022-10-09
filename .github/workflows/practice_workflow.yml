@@ -1,0 +1,40 @@
+name: Practice Workflow
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  Deploy-Apps-To-Development:
+    runs-on: macos-latest
+    steps:
+      - name: 'Checkout main branch'
+        uses: actions/checkout@v3
+      - name: 'Print tag value'
+        run: |
+          echo ${GITHUB_REF#refs/*/}
+          echo "VERSION_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+        # Can access the tag value using ${GITHUB_REF#refs/*/}
+        # https://docs.github.com/en/actions/learn-github-actions/environment-variables
+        # https://stackoverflow.com/questions/58177786/get-the-current-pushed-tag-in-github-actions
+      - run: echo ${GITHUB_REF#refs/*/}
+      - run: echo $VERSION_NAME
+      - name: 'Extract version name from tag' # https://github.com/actions-ecosystem/action-regex-match
+        uses: actions-ecosystem/action-regex-match@v2
+        id: version-name
+        with:
+          text: ${{ env.VERSION_NAME }}
+          regex: '[0-9]+\.[0-9]+\.[0-9]+' # https://regexr.com/
+      - name: 'Extract build number from tag'
+        uses: actions-ecosystem/action-regex-match@v2
+        id: build-number
+        with:
+          text: ${{ env.VERSION_NAME }}
+          regex: '[0-9]{3}' # https://regexr.com/
+          flags: 'g'
+      - name: 'Print extracted values'
+        run: |
+          echo ${{ steps.version-name.outputs.group1 }}
+          echo ${{ steps.build-number.outputs.group1 }}
+          echo ${{ steps.version-name.outputs.match }}
+          echo ${{ steps.build-number.outputs.match }}
