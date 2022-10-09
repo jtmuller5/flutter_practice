@@ -30,26 +30,64 @@ class FlossyScreenView extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30.0),
-            const Center(
-              child: Text('What\'s the reason for your visit?'),
+            const Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Center(
+                child: Text(
+                  'What\'s the reason for your visit?',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22.0,
+                  ),
+                ),
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SameSizedBox(label:"Emergency", icon: Icons.emergency_outlined,),
+              children: const [
+                SameSizedBox(
+                  label: "Emergency",
+                  icon: Icons.emergency_outlined,
+                ),
                 SizedBox(
                   width: 20.0,
                 ),
-                SameSizedBox(label:"Dentures/Implants",icon: Icons.heart_broken,),
+                SameSizedBox(
+                  label: "Dentures/Implants",
+                  icon: Icons.heart_broken,
+                ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  SameSizedBox(label: "Cleaning", icon: Icons.emergency_outlined),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  SameSizedBox(label: "Aligners", icon: Icons.heart_broken),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                SameSizedBox(label: "Tooth Pain", icon: Icons.emergency_outlined),
+                SizedBox(
+                  width: 20.0,
+                ),
+                SameSizedBox(label: "Other/Checkup", icon: Icons.heart_broken),
+              ],
+            )
           ],
         )),
       ),
     );
   }
 }
-
 
 class SameSizedBox extends StatelessWidget {
   const SameSizedBox({Key? key, required this.label, required this.icon}) : super(key: key);
@@ -74,8 +112,10 @@ class SameSizedBox extends StatelessWidget {
               SizedBox(height: 10.0),
               SizedBox(
                 width: 100.0,
-                child: Text( textAlign: TextAlign.center,
+                child: Text(
+                  textAlign: TextAlign.center,
                   label,
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
             ],

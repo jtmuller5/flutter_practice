@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 
-class Test extends StatefulWidget {
-  const ({Key? key}) : super(key: key);
+class QuestionScreenView extends StatefulWidget {
+  const QuestionScreenView({Key? key}) : super(key: key);
 
   @override
-  State<> createState() => _State();
+  State<QuestionScreenView> createState() => _QuestionScreenViewState();
 }
 
-class _State extends State<> {
+class _QuestionScreenViewState extends State<QuestionScreenView> {
   @override
   Widget build(BuildContext context) {
     return Container();
   }
 }
+
