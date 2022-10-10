@@ -1,6 +1,6 @@
 import 'package:stacked/stacked.dart';
 
-class FlossyScreenViewmodel extends BaseViewModel{
+class FlossyScreenViewModel extends BaseViewModel{
 
   void initialize(){
 
