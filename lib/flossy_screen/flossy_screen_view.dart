@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
+import 'flossy_screen_viewmodel.dart';
+
 class FlossyScreenView extends StatelessWidget {
   const FlossyScreenView({Key? key}) : super(key: key);
 
@@ -97,7 +99,7 @@ class SameSizedBox extends ViewModelWidget<FlossyScreenViewModel> {
   final IconData icon;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, FlossyScreenViewModel model) {
     return Flexible(
       child: InkWell(
         borderRadius: BorderRadius.circular(12.0),
