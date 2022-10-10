@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/flossy_screen/flossy_screen_view.dart';
 import 'package:flutter_practice/question_screen/question_screen_view.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FlossyScreenView(),
+      home: const QuestionScreenView(),
+
 
     );
   }
@@ -82,3 +84,90 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+TextTheme flossyTextTheme = GoogleFonts.poppinsTextTheme(const TextTheme(
+  // Labels are used on buttons, small - w400, m - w600, l - w800
+  labelSmall: TextStyle(
+    fontSize: 14.0,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  ),
+  labelMedium: TextStyle(
+    fontSize: 16,
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+  ),
+  labelLarge: TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  ),
+
+  // Body text uses regular weight, w400
+  bodySmall: TextStyle(
+    fontSize: 14,
+    color: Colors.grey,
+    fontWeight: FontWeight.w400,
+  ),
+  bodyMedium: TextStyle(
+    fontSize: 16.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.w400,
+  ),
+  bodyLarge: TextStyle(
+    fontSize: 18,
+    color: Colors.grey,
+    fontWeight: FontWeight.w400,
+  ),
+
+  // Titles use semi-bold weight, w600
+  titleSmall: TextStyle(
+    fontSize: 16.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.w700,
+  ),
+  titleMedium: TextStyle(
+    fontSize: 18.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.w700,
+  ),
+  titleLarge: TextStyle(
+    fontSize: 22.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.w700,
+  ),
+
+  // Headlines use bold, w700
+  headlineSmall: TextStyle(
+    fontSize: 24.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.w700,
+  ),
+  headlineMedium: TextStyle(
+    fontSize: 28.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.w700,
+  ),
+  headlineLarge: TextStyle(
+    fontSize: 32.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.w700,
+  ),
+
+  // Displays use bold weight, w600
+  displaySmall: TextStyle(
+    fontSize: 36.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.bold,
+  ),
+  displayMedium: TextStyle(
+    fontSize: 45.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.bold,
+  ),
+  displayLarge: TextStyle(
+    fontSize: 64.0,
+    color: Colors.grey,
+    fontWeight: FontWeight.bold,
+  ),
+));
