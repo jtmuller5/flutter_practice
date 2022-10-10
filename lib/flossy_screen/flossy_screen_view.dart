@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/flossy_screen/flossy_screen_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 import 'flossy_screen_viewmodel.dart';
@@ -9,85 +10,93 @@ class FlossyScreenView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            LinearProgressIndicator(
-              color: Colors.orange,
-              value: 0.5,
-              backgroundColor: Colors.orange.withOpacity(0.3),
-              minHeight: 9.0,
-            ),
-            const Padding(
-              padding: EdgeInsets.all(25.0),
-              child: Text(
-                "Flossy",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 35.0,
-                ),
-              ),
-            ),
-            SizedBox(height: 30.0),
-            const Padding(
-              padding: EdgeInsets.all(20.0),
-              child: Center(
-                child: Text(
-                  'What\'s the reason for your visit?',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22.0,
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                SameSizedBox(
-                  label: "Emergency",
-                  icon: Icons.emergency_outlined,
-                ),
-                SizedBox(
-                  width: 20.0,
-                ),
-                SameSizedBox(
-                  label: "Dentures/Implants",
-                  icon: Icons.heart_broken,
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  SameSizedBox(label: "Cleaning", icon: Icons.emergency_outlined),
-                  SizedBox(
-                    width: 20.0,
-                  ),
-                  SameSizedBox(label: "Aligners", icon: Icons.heart_broken),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                SameSizedBox(label: "Tooth Pain", icon: Icons.emergency_outlined),
-                SizedBox(
-                  width: 20.0,
-                ),
-                SameSizedBox(label: "Other/Checkup", icon: Icons.heart_broken),
-              ],
-            )
-          ],
-        )),
-      ),
+    return ViewModelBuilder<FlossyScreenViewModel>.reactive(
+      viewModelBuilder: () => FlossyScreenViewModel(),
+      onModelReady: (model) {
+        // model.initialize();
+      },
+      builder: (context, model, child) {
+        return Scaffold(
+          body:  SafeArea(
+            child: Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    LinearProgressIndicator(
+                      color: Colors.orange,
+                      value: 0.5,
+                      backgroundColor: Colors.orange.withOpacity(0.3),
+                      minHeight: 9.0,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(25.0),
+                      child: Text(
+                        "Flossy",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 35.0,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30.0),
+                    const Padding(
+                      padding: EdgeInsets.all(20.0),
+                      child: Center(
+                        child: Text(
+                          'What\'s the reason for your visit?',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        SameSizedBox(
+                          label: "Emergency",
+                          icon: Icons.emergency_outlined,
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        SameSizedBox(
+                          label: "Dentures/Implants",
+                          icon: Icons.heart_broken,
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          SameSizedBox(label: "Cleaning", icon: Icons.emergency_outlined),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          SameSizedBox(label: "Aligners", icon: Icons.heart_broken),
+                        ],
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        SameSizedBox(label: "Tooth Pain", icon: Icons.emergency_outlined),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        SameSizedBox(label: "Other/Checkup", icon: Icons.heart_broken),
+                      ],
+                    )
+                  ],
+                )),
+          ),
+        );
+      },
     );
   }
 }
