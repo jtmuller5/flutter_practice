@@ -113,13 +113,13 @@ class SameSizedBox extends ViewModelWidget<FlossyScreenViewModel> {
       child: InkWell(
         borderRadius: BorderRadius.circular(12.0),
         onTap: () {
-          print("test");
+      model.updateLabel(label);
 
         },
         child: Container(
           height: 130.0,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey, width: 1.0),
+            border: Border.all(color:label == model.selectedLabel ? Colors.orange : Colors.grey, width: 1.0),
             borderRadius: BorderRadius.circular(12.0),
           ),
           child: Padding(
