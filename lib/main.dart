@@ -3,6 +3,8 @@ import 'package:flutter_practice/flossy_screen/flossy_screen_view.dart';
 import 'package:flutter_practice/question_screen/question_screen_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'more_details/more_details_view.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FlossyScreenView(),
+      home: const MoreDetailsView(),
 
 
     );
