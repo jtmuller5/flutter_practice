@@ -18,8 +18,8 @@ class MoreDetailsView extends StatelessWidget {
             backgroundColor: Colors.orange.withOpacity(0.3),
             minHeight: 9.0,
           ),
-          Padding(
-            padding: const EdgeInsets.all(25.0),
+          const Padding(
+            padding: EdgeInsets.all(25.0),
             child: Text("Flossy", style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
           ),
           const SizedBox(
@@ -38,25 +38,28 @@ class MoreDetailsView extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
+              const Text(
                 "Full Name",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
               ),
-              SizedBox(height: 10.0,),
+              const SizedBox(
+                height: 10.0,
+              ),
               Column(
                 children: [
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       isDense: true,
                     ),
                   ),
-                  SizedBox(height: 30.0,),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
                   TextFormField(
-                    decoration:InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-
-                    ) ,
+                    ),
                   )
                 ],
               ),
@@ -67,26 +70,28 @@ class MoreDetailsView extends StatelessWidget {
                 "Email",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
               ),
-              SizedBox(height: 10.0,),
+              const SizedBox(
+                height: 10.0,
+              ),
               TextFormField(
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 100,),
+              const SizedBox(
+                height: 100,
+              ),
               Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children:  const [
+                      children: const [
                         Padding(
                           padding: EdgeInsets.all(20.0),
                           child: Text("Show me dentists"),
                         ),
-
-
                       ],
                     ),
                   ),
