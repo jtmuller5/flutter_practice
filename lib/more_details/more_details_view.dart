@@ -80,7 +80,7 @@ class MoreDetailsView extends StatelessWidget {
                   const SizedBox(
                     height: 100,
                   ),
-                  ColoredBox(
+                  Container(
                     color: Colors.orange,
                     child: OutlinedButton(
                       onPressed: () {},
