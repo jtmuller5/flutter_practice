@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MoreDetailsView extends StatelessWidget {
-  const MoreDetailsView({Key? key}) : super(key: key);
+  MoreDetailsView({Key? key}) : super(key: key);
+  TextEditingController firstNameController = TextEditingController(text: "");
+  TextEditingController lastNameController = TextEditingController(text: "");
+  TextEditingController emailController = TextEditingController(text: "");
 
   @override
   Widget build(BuildContext context) {
@@ -54,11 +57,13 @@ class MoreDetailsView extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 4.0),
                       child: Column(
                         children: [
-                          const TextField(
-                            decoration: InputDecoration(
+                          TextField(
+                            decoration: const InputDecoration(
                               border: OutlineInputBorder(),
+                              hintText: "Full Name",
                               isDense: true,
                             ),
+                            controller: firstNameController,
                           ),
                           const SizedBox(
                             height: 30.0,
@@ -66,7 +71,9 @@ class MoreDetailsView extends StatelessWidget {
                           TextFormField(
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(),
+                              hintText: "Last Name",
                             ),
+                            controller: lastNameController,
                           )
                         ],
                       ),
@@ -85,6 +92,7 @@ class MoreDetailsView extends StatelessWidget {
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                       ),
+                      controller: emailController,
                     ),
                     const SizedBox(
                       height: 100,
@@ -99,7 +107,9 @@ class MoreDetailsView extends StatelessWidget {
                           ),
                           backgroundColor: MaterialStateColor.resolveWith((states) => Colors.deepOrange),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          print("First Name:${firstNameController.text}, \nLast Name: ${lastNameController.text},\nEmail: ${emailController.text}");
+                        },
                         child: const Text(
                           "Show me dentists",
                           style: TextStyle(
