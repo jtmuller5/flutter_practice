@@ -92,9 +92,12 @@ class MoreDetailsView extends StatelessWidget {
                     Center(
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.resolveWith((states) {
-                            return Colors.deepOrange;
-                          }),
+                          shape: MaterialStateProperty.resolveWith(
+                            (states) => RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                          ),
+                          backgroundColor: MaterialStateColor.resolveWith((states) => Colors.deepOrange),
                         ),
                         onPressed: () {},
                         child: const Text(
