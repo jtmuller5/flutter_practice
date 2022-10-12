@@ -35,65 +35,79 @@ class MoreDetailsView extends StatelessWidget {
               const SizedBox(
                 height: 30.0,
               ),
-              Column(
-                children: [
-                  const Text(
-                    "Full Name",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                  ),
-                  const SizedBox(
-                    height: 10.0,
-                  ),
-                  Column(
-                    children: [
-                      const TextField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          isDense: true,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
-                      TextFormField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  const Text(
-                    "Email",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-                  ),
-                  const SizedBox(
-                    height: 10.0,
-                  ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 48,
+                  vertical: 8,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Full Name",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 100,
-                  ),
-                  ColoredBox(
-                    color: Colors.orange,
-                    child: OutlinedButton(
-                      onPressed: () {},
-                      child: const Text(
-                        "Show me dentists",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.white,
-                        ),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      child: Column(
+                        children: [
+                          const TextField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              isDense: true,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 30.0,
+                          ),
+                          TextFormField(
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                            ),
+                          )
+                        ],
                       ),
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    const Text(
+                      "Email",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                    ),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 100,
+                    ),
+                    Center(
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.resolveWith((states) {
+                            return Colors.deepOrange;
+                          }),
+                        ),
+                        onPressed: () {},
+                        child: const Text(
+                          "Show me dentists",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
