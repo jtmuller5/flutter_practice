@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/flossy_screen/flossy_screen_view.dart';
 import 'package:flutter_practice/question_screen/question_screen_view.dart';
+import 'package:flutter_practice/slider_screen/slider_screen_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'more_details/more_details_view.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  MoreDetailsView(),
+      home:  const SliderScreenView(),
 
 
     );

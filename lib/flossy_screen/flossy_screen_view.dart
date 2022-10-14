@@ -42,7 +42,7 @@ class FlossyScreenView extends StatelessWidget {
                 ),
                 SizedBox(height: 30.0),
                 const Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(10.0),
                   child: Center(
                     child: Text(
                       'What\'s the reason for your visit?',

@@ -1,0 +1,22 @@
+
+On Boarding + Login
+
+Page
+1. title
+2. PageView :
+   a. questionaire:
+      1. image
+      2. subtitle
+   b. screen2:
+      1.image
+      2.subtitle
+      3.slider
+   c.screen3:
+      1.title
+      2.textfield - first name
+      3.textfield - last name
+      4.textfield - email
+3. Indicator
+4. button:
+  a. yes no changes
+  b. regular button
