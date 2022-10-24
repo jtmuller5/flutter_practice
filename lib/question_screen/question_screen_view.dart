@@ -17,7 +17,7 @@ class QuestionScreenView extends StatelessWidget {
                   child: Text("Flossy", style: flossyTextTheme.headlineLarge!.copyWith(color: Colors.black)),
                   alignment: Alignment.topLeft),
               SizedBox(
-                height: 50.0,
+                height: 100.0,
               ),
               Align(
                 child: Text(
@@ -27,7 +27,7 @@ class QuestionScreenView extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 50.0,
+                height: 100.0,
               ),
               Image.asset(
                 'assets/toothImage.png',
@@ -35,6 +35,7 @@ class QuestionScreenView extends StatelessWidget {
                 height: 200.0,
                 width: 200.0,
               ),
+              SizedBox(height: 80.0,),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
@@ -45,11 +46,11 @@ class QuestionScreenView extends StatelessWidget {
                         print("Yes button pressed");
                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => FlossyScreenView(),));
                       },
-                      child: Text("Yes"),
+                      child: Text("Yes",style: TextStyle(fontSize: 18, color: Colors.deepOrange)),
                       style: ButtonStyle(
                         shape: MaterialStateProperty.resolveWith(
                           (states) => RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0),
+                            borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
                       ),
@@ -58,7 +59,7 @@ class QuestionScreenView extends StatelessWidget {
                       onPressed: (){
                         print("No button pressed");
                       },
-                      child: Text('No'),style: ButtonStyle(shape: MaterialStateProperty.resolveWith((states) {
+                      child: Text('No',style: TextStyle(fontSize: 18,color: Colors.deepOrange),),style: ButtonStyle(shape: MaterialStateProperty.resolveWith((states) {
                       if (states.contains(MaterialState.hovered)) return RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(0.0),
                       );
@@ -66,9 +67,10 @@ class QuestionScreenView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(0.0),
                       );
                       return  RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.0),
+                        borderRadius: BorderRadius.circular(10.0),
                       );
-                    }),),
+                    }),
+                    ),
                     )
                   ],
                 ),

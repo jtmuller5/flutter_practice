@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 class DrawerList extends StatelessWidget {
   const DrawerList({Key? key}) : super(key: key);
 
+
+
   @override
   Widget build(BuildContext context) {
+
+    double widthSize = MediaQuery.of(context).size.width;
+    double heightSize = MediaQuery.of(context).size.height;
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -19,6 +25,18 @@ class DrawerList extends StatelessWidget {
         title: Text("Title"),
         automaticallyImplyLeading: true,
       ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+
+        //THIS CALCULATES HEIGHT AND WIDTH OF SCREEN
+        // children: [
+        //    Center(child: Text("Width $widthSize",style: TextStyle(fontSize: 20),),),
+        //   Text("Height $heightSize",style: TextStyle(fontSize: 20),
+        //   ),
+        //   if(widthSize > heightSize) Text("Landscape",style: TextStyle(fontSize: 20),),
+        // ],
+
+          ),
       drawer: Drawer(
         child: ListView(padding: EdgeInsets.all(28.0), children: [
           ListTile(title: Text("idea 1"), subtitle: Text("subtitle")),

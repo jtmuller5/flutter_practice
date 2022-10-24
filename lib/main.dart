@@ -5,6 +5,7 @@ import 'package:flutter_practice/slider_screen/slider_screen_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'drawer/drawer_list.dart';
+import 'drawer/drawer_list_dk.dart';
 import 'more_details/more_details_view.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         sliderTheme: SliderThemeData(overlayShape: SliderComponentShape.noOverlay)
         ),
 
-      home:  const DrawerList(),
+      home:  DrawerListDk(),
 
     );
   }
