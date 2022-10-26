@@ -4,6 +4,7 @@ import 'package:flutter_practice/question_screen/question_screen_view.dart';
 import 'package:flutter_practice/slider_screen/slider_screen_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'calendar_screen/calendar_screen.dart';
 import 'drawer/drawer_list.dart';
 import 'drawer/drawer_list_dk.dart';
 import 'more_details/more_details_view.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         sliderTheme: SliderThemeData(overlayShape: SliderComponentShape.noOverlay)
         ),
 
-      home:  DrawerListDk(),
+      home:  CalendarScreen(),
 
     );
   }
