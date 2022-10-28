@@ -9,25 +9,24 @@ class CalendarDay extends ViewModelWidget<CalendarScreenModel> {
   DateTime date;
 
   @override
-  Widget build(BuildContext context , CalendarScreenModel model) {
-    return Flexible(
-      child: InkWell(onTap:(){
+  Widget build(BuildContext context, CalendarScreenModel model) {
+    return InkWell(
+      onTap: () {
         model.setSelectedDate(date);
-      } ,
-        child: Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Container(
-            height: 80,
-            width: 70,
-            decoration: BoxDecoration(color: model.selectedDate == date ? Colors.orangeAccent : Colors.deepOrange, borderRadius: BorderRadius.circular(4.0)),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: const EdgeInsets.all(9.0),
-                child: Text(
-                  date.day.toString(),
-                  style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
-                ),
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Container(
+          decoration: BoxDecoration(
+              color: model.selectedDate == date ? Colors.orangeAccent : Colors.deepOrange,
+              borderRadius: BorderRadius.circular(4.0)),
+          child: Align(
+            alignment: Alignment.topRight,
+            child: Padding(
+              padding: const EdgeInsets.all(9.0),
+              child: Text(
+                date.day.toString(),
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
           ),
