@@ -13,6 +13,12 @@ class MoreDetailsView extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Width: ' + MediaQuery.of(context).size.width.toStringAsFixed(2)),
+              Text('Height: ' + MediaQuery.of(context).size.height.toStringAsFixed(2)),
+            ],
+          )/* Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               LinearProgressIndicator(
@@ -123,7 +129,7 @@ class MoreDetailsView extends StatelessWidget {
                 ),
               ),
             ],
-          ),
+          ),*/
         ),
       ),
     );
