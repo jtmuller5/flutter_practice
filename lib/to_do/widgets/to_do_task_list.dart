@@ -18,21 +18,28 @@ class ToDoTaskList extends ViewModelWidget<ToDoPageViewModel> {
           child: ListTile(
             leading: Checkbox(
               checkColor: Colors.black,
-              value: false,
+              value: viewModel.completedTasks.contains(item),
               onChanged: (value) {
-                //todo what to do??
+                if (viewModel.completedTasks.contains(item)) {
+                  viewModel.completedTasks.remove(item);
+                  viewModel.notifyListeners();
+                } else {
+                  viewModel.addCheckMark(item);
+                }
               },
             ),
             title: Text(item),
-            trailing: IconButton(icon:const Icon(Icons.delete,), onPressed: () {
-              viewModel.removeTask(index);
-            },),
+            trailing: IconButton(
+              icon: const Icon(
+                Icons.delete,
+              ),
+              onPressed: () {
+                viewModel.removeTask(index);
+              },
+            ),
           ),
         );
       },
     );
   }
 }
-
-
-

@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/to_do/to_do_page_viewmodel.dart';
 import 'package:flutter_practice/to_do/widgets/to_do_task_list.dart';
@@ -9,7 +11,7 @@ class ToPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<ToDoPageViewModel>.nonReactive(
+    return ViewModelBuilder<ToDoPageViewModel>.reactive(
         viewModelBuilder: () => ToDoPageViewModel(),
         builder: (context, viewModel, _) {
           return Scaffold(
@@ -19,6 +21,8 @@ class ToPage extends StatelessWidget {
                 child: Column(
                   children: [
                     const Expanded(child: ToDoTaskList()),
+                    Text("Tasks" + viewModel.tasks.toString()),
+                    Text("completed tasks" + viewModel.completedTasks.toString()),
                     ToDoTextField(),
                   ],
                 ),
