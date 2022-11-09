@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/on_boarding_screen/on_boarding_viewmodel.dart';
 import 'package:stacked/stacked.dart';
+import 'package:flutter/src/material/colors.dart';
 
 import '../../to_do/to_do_page.dart';
 
@@ -15,6 +16,7 @@ class OnboardingConfirmButton extends ViewModelWidget<OnboardingViewModel> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
+              // style: BorderRadius(BorderRadius.circular(8),),
               onPressed: () {
                 print("First name: ${viewModel.firstName}");
                 print(viewModel.lastName);
@@ -24,13 +26,13 @@ class OnboardingConfirmButton extends ViewModelWidget<OnboardingViewModel> {
                   MaterialPageRoute(builder: (context) => const ToPage()),
                 );
               },
-              child: const Text(
+              child:const Text(
                 "See your Dentist Matches",
                 style: TextStyle(
                   fontSize: 20,
                 ),
-              ),
-            ),
+              )
+            )
           ],
         ),
       );

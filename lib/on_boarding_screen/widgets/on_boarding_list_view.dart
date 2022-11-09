@@ -14,14 +14,32 @@ class OnBoardingListView extends ViewModelWidget<OnboardingViewModel> {
           children: [
             Row(
               children: [
-                SizedBox(height: 150,),
-                Title(color: Colors.black, child: const Text("Full Name",style: TextStyle(fontWeight:FontWeight.bold,fontSize: 20),),),
+                Title(
+                  color: Colors.black,
+                  child: const Text(
+                    "Full Name",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
                 Flexible(
                   child: TextFormField(
                     onChanged: (value) {
                       viewModel.updateFirstName(value);
                     },
-                    decoration: const InputDecoration(hintText: "First Name", border: OutlineInputBorder()),
+                    decoration: InputDecoration(
+                      hintText: "First Name",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: const BorderSide(
+                          color: Colors.grey,
+                          width: 2,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -32,7 +50,12 @@ class OnBoardingListView extends ViewModelWidget<OnboardingViewModel> {
                     onChanged: (value) {
                       viewModel.updateLastName(value);
                     },
-                    decoration: InputDecoration(hintText: "Last name", border: OutlineInputBorder()),
+                    decoration: InputDecoration(hintText: "Last name", border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        color: Colors.black, width: 2,
+                      ),
+                    )),
                   ),
                 ),
               ],
@@ -40,20 +63,28 @@ class OnBoardingListView extends ViewModelWidget<OnboardingViewModel> {
             const SizedBox(
               height: 30,
             ),
-            Title(
-                color: Colors.black,
-                child: const Text(
-                  "Email",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )),
+            Row(
+              children: [
+                Title(
+                    color: Colors.black,
+                    child: const Text(
+                      "Email",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+              ],
+            ),
             TextFormField(
               onChanged: (value) {
                 viewModel.updateEmail(value);
               },
-              decoration: const InputDecoration(hintText: "Enter Email", border: OutlineInputBorder()),
+              decoration:  InputDecoration(hintText: "Enter Email", border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),borderSide: const BorderSide(
+                color: Colors.black, width: 2,
+              )
+              )),
             )
           ],
         ),
