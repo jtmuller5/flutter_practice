@@ -1,0 +1,16 @@
+Column :
+   1. text - Title
+   2. for displaying text fields and button
+       a.myTextField - full name **
+       b.myTextField - year of birth
+       c.myTextField - email
+       d.myTextField -phone number
+       e. myTextField - Drop down yes/no
+       6. submit button
+
+* Custome widgets :
+
+ - myTextField:
+  1.Column
+       a.Title
+       b.TextField

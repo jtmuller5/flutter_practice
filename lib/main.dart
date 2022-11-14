@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/flossy_screen/flossy_screen_view.dart';
+import 'package:flutter_practice/on_boarding_dk/on_boarding_page_dk.dart';
 import 'package:flutter_practice/question_screen/question_screen_view.dart';
 import 'package:flutter_practice/slider_screen/slider_screen_view.dart';
 import 'package:flutter_practice/to_do/to_do_page.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         sliderTheme: SliderThemeData(overlayShape: SliderComponentShape.noOverlay)
         ),
 
-      home: OnBoardingPage(),
+      home: const OnBoardingPageDk(),
 
     );
   }
