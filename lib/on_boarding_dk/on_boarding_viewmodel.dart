@@ -44,7 +44,12 @@ class OnBoardingViewModel extends BaseViewModel{
   }
 
   void inputAndValidLastName(String? lastName){
-    this.lastName = lastName;
+    this.lastName = lastName = lastName;
+    if(lastName == null || lastName.isEmpty == true){
+      lastNameError = "Required";
+    }else if(lastName.length < 2){
+      lastNameError = "Minimum 2 characters";
+    }
   }
 
   void inputAndValidDob(String dob){
