@@ -7,13 +7,15 @@ class ToDoText extends ViewModelWidget<ListScreenViewModel> {
 
   @override
   Widget build(BuildContext context, ListScreenViewModel viewModel) {
+    final TextEditingController _controller = TextEditingController();
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding:  EdgeInsets.all(8.0),
       child: Row(
         children: [
           const Align(alignment: Alignment.bottomCenter),
           Flexible(
             child: TextField(
+              controller:_controller,
               decoration: InputDecoration(
                 hintText: ("What do you need to do today?"),
                 hintStyle: TextStyle(color: Colors.white),
@@ -30,7 +32,9 @@ class ToDoText extends ViewModelWidget<ListScreenViewModel> {
             width: 20,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: (){
+              viewModel.addToDoItem(_controller.text);
+            },
             style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),

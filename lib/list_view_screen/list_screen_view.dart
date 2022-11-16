@@ -16,14 +16,14 @@ class ListScreenView extends StatelessWidget {
       builder: (context, model, child) {
         return Scaffold(
           body: Column(
-            children: [Flexible(
+            children: [Expanded(
               child: ListView.separated(
-                itemCount: model.toDoItem.length,
+                itemCount: model.toDoItems.length,
                 itemBuilder: (context, index) {
-                  return Flexible(child: ToDoCard(model.toDoItem[index]));
+                  return ToDoCard(model.toDoItems[index]);
                 }, separatorBuilder: (BuildContext context, int index) { return const Divider(color: Colors.black,); },
               ),
-            ),  Flexible(child: ToDoText())
+            ),  ToDoText()
             ]
           ),
           // body: ListView(

@@ -1,10 +1,18 @@
 import 'package:stacked/stacked.dart';
 
 class ListScreenViewModel extends BaseViewModel{
-  List<String> toDoItem = [];
+  List<String> toDoItems = [];
 
-  void initialize(){
+  void addToDoItem(String toDoItem){
+    toDoItems.add(toDoItem);
+    notifyListeners();
   }
+
+  void removeToDoTask(String toDoItem){
+    toDoItems.remove(toDoItem);
+    notifyListeners();
+  }
+
   @override
   void dispose() {
     // TODO: implement dispose
