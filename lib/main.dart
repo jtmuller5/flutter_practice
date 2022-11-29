@@ -13,6 +13,7 @@ import 'calendar_screen/calendar_screen.dart';
 import 'counter_screen/counter_screen.dart';
 import 'drawer/drawer_list.dart';
 import 'drawer/drawer_list_dk.dart';
+import 'if_statement/if_statement.dart';
 import 'list_view_screen/list_screen_view.dart';
 import 'more_details/more_details_view.dart';
 import 'on_boarding_screen/on_boarding_page.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         sliderTheme: SliderThemeData(overlayShape: SliderComponentShape.noOverlay)
         ),
 
-      home: const AsyncPractice(),
+      home: IfStatement(),
 
     );
   }
